@@ -1,22 +1,20 @@
 #include<iostream>
 #include<vector>
+#include<algorithm>
 using namespace std;
+   bool containsDuplicate(vector<int>& nums) {
+        sort(nums.begin(),nums.end());
 
+        for(int i = 0;i < nums.size()-1; i++){
+            
+          if(nums[i]==nums[i+1])
+          return true;
+            
+        }
+        return false;
+    }
 
 int main() {
-
-	int a = 0;
-	int b = 4;
-	if (b || a) {
-		a++;
-	}
-	if(b&&a) {
-		b++;
-	}
-	else if (b > a) {
-		a += 4;
-	}
-	
-	std::cout << a << b;;
-	
+  vector<int> vec = {1,2,2,4};
+  std::cout <<std::boolalpha << containsDuplicate(vec);
 }
