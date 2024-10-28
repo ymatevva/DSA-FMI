@@ -4,6 +4,24 @@
 #include<cstring>
 using namespace std;
 
+//In place verse:
+// void reorderLex(vector<string>& vec) {
+	
+// 	unsigned pos = 0;
+	
+// 	for (char ch = 'a'; ch <= 'z'; ch++)
+// 	{
+// 		for (size_t i = 0; i < vec.size(); i++)
+// 		{
+// 			if (vec[i][0] == ch) {
+// 				std::swap(vec[i], vec[pos]);
+// 				pos++;
+// 			}
+// 		}
+// 	}
+// }
+
+
 
 bool lexOrder(const string& str1, const string& str2) {
 	return str1[0] < str2[0];
