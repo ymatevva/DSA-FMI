@@ -4,6 +4,23 @@
 #include<cstring>
 using namespace std;
 
+//In place verse:
+// void reorderWordsLex(vector<string>& vec) {
+
+// 	unsigned pos = 0;
+
+// 	for (char  ch = 'a'; ch <= 'z'; ch++)
+// 	{
+// 		for (size_t i = 0; i < vec.size(); i++)
+// 		{
+// 			if (vec[i][0] == ch || vec[i][0]  - 'A' + 'a' == ch) {
+// 				std::swap(vec[i], vec[pos]);
+// 				pos++;
+// 			}
+// 		}
+// 	}
+// }
+
 bool isUpper(char ch) {
 	return ch >= 'A' && ch <= 'Z';
 }
