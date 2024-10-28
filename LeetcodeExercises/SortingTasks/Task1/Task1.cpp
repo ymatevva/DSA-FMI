@@ -3,6 +3,9 @@
 #include<vector>
 using namespace std;
 
+//https://www.hackerrank.com/contests/sda-test/challenges/challenge-1604/problem
+//Complexity: O(n^2)
+
 void canBeBalanced(vector<int>& elements,size_t numElements) {
    
     sort(elements.begin(), elements.end());
