@@ -1,126 +1,93 @@
-#include<iostream>
+#include <iostream>
+#include <string>
 using namespace std;
 
-
-struct SinglyNode {
-	int val;
-	SinglyNode* next;
-	SinglyNode(int val,SinglyNode* next):next(next),val(val){}
-	SinglyNode(int val):val(val),next(nullptr){}
+struct Node
+{
+	Node(int value, Node* next) : value(value), next(next) {}
+	int value;
+	Node* next;
 };
 
-
-bool isEven(int num) {
-	return num % 2 == 0;
+void print(Node* list)
+{
+	Node* iter = list;
+	while (iter != nullptr)
+	{
+		cout << iter->value << " ";
+		iter = iter->next;
+	}
 }
 
-//Complexity by time: 0(n)//Complexity by space:0(n)
-//void  rearange(SinglyNode*& head) {
-//	if (!head) {
-//		return;
-//	}
-//
-//	SinglyNode* iter = head;
-//
-//	SinglyNode start(0);
-//	SinglyNode* res = &start;
-//
-//	while (iter) {
-//		if (isEven(iter->val)) {
-//			res->next = new SinglyNode(iter->val);
-//			res = res->next;
-//		}
-//		iter = iter->next;
-//	}
-//
-//	iter = head;
-//	
-//	while (iter) {
-//		if (!isEven(iter->val)) {
-//			res->next = new SinglyNode(iter->val);
-//			res = res->next;
-//		}
-//		iter = iter->next;
-//	}
-//
-//	head = start.next;
-//}
+void freeList(Node* list)
+{
+	Node* iter = list;
+	while (iter)
+	{
+		Node* next = iter->next;
+		delete iter;
+		iter = next;
+	}
+}
 
-
-
-//Complexity by time: 0(n)//Complexity by space:0(1)
-SinglyNode* rearange(SinglyNode*& head) {
+unsigned countDigits(int num) {
+	unsigned count = 0;
+	while (num != 0) {
+		count++;
+		num /= 10;
+	}
+	return count;
+}
+bool isWithThreeDigits(int num) {
+	return countDigits(num) == 3;
+}
+template<typename Comparator>
+Node* rearrange(Node* head, const Comparator& comparator) {
 	if (!head) {
 		return nullptr;
 	}
 
-	SinglyNode* iter = head;
-	SinglyNode* firstEven;
-	SinglyNode* firstOdd;
-	SinglyNode* lastEven;
-	SinglyNode* lastOdd;
+	Node* trueBeg;
+	Node* trueEnd;
+	Node* falseBeg;
+	Node* falseEnd;
+	trueBeg = trueEnd = falseBeg = falseEnd = nullptr;
 
-	firstEven = firstOdd = lastEven = lastOdd = nullptr;
-
-
+	Node* iter = head;
 	while (iter) {
-
-		if (isEven(iter->val)) {
-
-			if (!firstEven) {
-				firstEven = lastEven = new SinglyNode(iter->val);
+		if (comparator(iter->value)) {
+			if (!trueBeg) {
+				trueBeg = trueEnd = iter;
 			}
 			else {
-				lastEven->next = iter;
-				lastEven = iter;
+				trueEnd->next = iter;
+				trueEnd = iter;
 			}
-		}
-		else {
-			if (!firstOdd) {
-				firstOdd = lastOdd = new SinglyNode(iter->val);
+		}else {
+			if (!falseBeg) {
+				falseBeg = falseEnd = iter;
 			}
 			else {
-				lastOdd->next = iter;
-				lastOdd = iter;
+				falseEnd->next = iter;
+				falseEnd = iter;
 			}
 		}
 		iter = iter->next;
 	}
 
-	if (lastEven) {
-		lastEven->next = firstOdd;
-	}
-	if (lastOdd) {
-		lastOdd->next = nullptr;
+	if (trueEnd) {
+		trueEnd->next = falseBeg;
+	}if (falseEnd) {
+		falseEnd ->next = nullptr;
 	}
 
-	return lastEven ? firstEven : firstOdd;
-	
+	return trueBeg ? trueBeg : falseBeg;
 }
-
-void print(SinglyNode* head) {
-	if (!head) {
-		return;
-	}
-
-	SinglyNode* iter = head;
-	while (iter) {
-		std::cout << iter->val << " ";
-		iter = iter->next;
-	}
-}
-
 
 int main() {
 
-
-	SinglyNode* res = new SinglyNode(3);
-	res->next = new SinglyNode(5);
-	res->next->next = new SinglyNode(2);
-	res->next->next->next = new SinglyNode(9);
-	res->next->next->next->next = new SinglyNode(4);
-
-	print(rearange(res));
-	free(res);
+	Node* test = new Node(123,new Node(22,new Node(398,new Node(41,new Node(5,new Node(698,nullptr))))));
+	rearrange(test, isWithThreeDigits);
+	print(test);
 	return 0;
 }
