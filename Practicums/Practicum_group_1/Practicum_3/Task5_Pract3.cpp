@@ -21,6 +21,18 @@ using namespace std;
 // 	}
 // }
 
+//With std::partititon
+// void sortByLetter(vector<string>& words) {
+
+// 	auto beg = words.begin();
+// 	auto end = words.end();
+// 	for (char ch = 'a'; ch <= 'z'; ch++)
+// 	{
+// 		auto newBeg = partition(beg, end, [ch](const string& str) {return str[0] == ch || str[0] == ch - 'a' + 'A'; });
+// 		beg = newBeg;
+// 	}
+// }
+
 bool isUpper(char ch) {
 	return ch >= 'A' && ch <= 'Z';
 }
