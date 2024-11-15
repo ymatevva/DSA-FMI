@@ -1,4 +1,5 @@
 #include<iostream>
+#include<vector>
 using namespace std;
 
 struct Node {
@@ -7,47 +8,38 @@ struct Node {
 	Node(int val) :val(val), next(nullptr) {}
 };
 
-size_t getLen(Node* head) {
-	if (!head) {
-		return 0;
-	}
-	unsigned count = 0;
+void fillValues(vector<int>& vec, Node* head) {
+
 	Node* iter = head;
 	while (iter) {
-		count++;
+		vec.push_back(iter->val);
 		iter = iter->next;
 	}
-	return count;
+}
+int getMaxTwinSum(Node* head) {
+
+	vector<int>values;
+	fillValues(values, head);
+
+	int maxTwinSum = INT_MIN;
+	for (size_t i = 0; i < values.size(); i++)
+	{
+		int currSum = values[i] + values[values.size() - i - 1];
+		if (currSum > maxTwinSum) {
+			maxTwinSum = currSum;
+		}
+	}
+	return maxTwinSum;
+
 }
 
-Node* intersectionNode(Node* first, Node* second) {
+int main() {
 
-	if (!first || !second) {
-		return nullptr;
-	}
+	Node* test = new Node(4);
+	test->next = new Node(2);
+	test->next->next = new Node(2);
+	test->next->next->next = new Node(3);
 
-	size_t firstLen = getLen(first);
-	size_t secLen = getLen(second);
-
-	Node* firstIter = first;
-	Node* secIter = second;
-
-	while (firstLen > secLen) {
-		firstLen--;
-		firstIter = firstIter->next;
-	}
-
-	while (firstLen < secLen) {
-		secLen--;
-		secIter = secIter->next;
-	}
-
-	while (firstIter && secIter) {
-		if (firstIter == secIter) {
-			return secIter;
-		}
-		secIter = secIter->next;
-		firstIter = firstIter->next;
-	}
-	return nullptr;
+	std::cout << getMaxTwinSum(test);
+	return 0;
 }
