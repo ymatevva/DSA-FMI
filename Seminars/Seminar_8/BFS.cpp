@@ -44,7 +44,7 @@ void free(Node* root) {
 
 	for (size_t i = 0; i < root->children.size(); i++)
 	{
-		delete root->children[i];
+		free(root->children[i]);
 	}
 	delete root;
 }
