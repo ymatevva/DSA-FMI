@@ -1,6 +1,8 @@
 #include<iostream>
 using namespace std;
 
+//Leetcode: 160
+//https://leetcode.com/problems/intersection-of-two-linked-lists/description/
 struct ListNode {
 	int val;
 	ListNode* next;
