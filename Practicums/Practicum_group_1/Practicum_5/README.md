@@ -9,3 +9,4 @@
 7. [Middle of the Linked List](https://leetcode.com/problems/middle-of-the-linked-list/description/)
 8. [Palindrome Linked List](https://leetcode.com/problems/palindrome-linked-list/description/)
 9. [Intersection of Two Linked Lists](https://leetcode.com/problems/intersection-of-two-linked-lists/description/)
+10. [Parttition list](https://leetcode.com/problems/partition-list/?envType=problem-list-v2&envId=atttgh4c)
