@@ -1,8 +1,6 @@
 #include<iostream>
 using namespace std;
-
-//https://leetcode.com/problems/add-two-numbers/description/?envType=problem-list-v2&envId=awto6rpd
-
+//https://leetcode.com/problems/add-two-numbers-ii/description/?envType=problem-list-v2&envId=linked-list
 
 struct ListNode {
 	int val;
