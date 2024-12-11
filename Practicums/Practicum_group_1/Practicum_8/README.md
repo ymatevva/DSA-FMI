@@ -5,3 +5,4 @@
 3. [K-closest-to-origin](https://leetcode.com/problems/k-closest-points-to-origin/submissions/1470169693/)
 4. [Kth-weakest-row](https://leetcode.com/problems/the-k-weakest-rows-in-a-matrix/)
 5. [Kth-most-frequent](https://leetcode.com/problems/top-k-frequent-elements/)
+6. [Sort-frequency](https://leetcode.com/problems/sort-characters-by-frequency/)
