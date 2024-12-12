@@ -11,3 +11,4 @@
 10. [Find-diff-of-two-arrays](https://leetcode.com/problems/find-the-difference-of-two-arrays/)
 11. [Find-missing-and-repeated](https://leetcode.com/problems/find-missing-and-repeated-values/?envType=problem-list-v2&envId=a19800zg)
 12. [Check-dist-between-same-letters](https://leetcode.com/problems/check-distances-between-same-letters/)
+13. [Rings-and-rods](https://leetcode.com/problems/rings-and-rods/description/?envType=problem-list-v2&envId=a19800zg)
