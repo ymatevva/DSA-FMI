@@ -7,3 +7,4 @@
 6. [Kth-distinct-string]( https://leetcode.com/problems/kth-distinct-string-in-an-array/)
 7. [Number-of-pairs-with-diff-K](https://leetcode.com/problems/count-number-of-pairs-with-absolute-difference-k/)
 8. [K-diff-pairs]( https://leetcode.com/problems/k-diff-pairs-in-an-array/)
+9. [Find-common-elements](https://leetcode.com/problems/intersection-of-two-arrays-ii/)
