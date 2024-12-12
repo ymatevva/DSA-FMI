@@ -9,3 +9,4 @@
 8. [K-diff-pairs]( https://leetcode.com/problems/k-diff-pairs-in-an-array/)
 9. [Find-common-elements](https://leetcode.com/problems/intersection-of-two-arrays-ii/)
 10. [Find-diff-of-two-arrays](https://leetcode.com/problems/find-the-difference-of-two-arrays/)
+11. [Find-missing-and-repeated](https://leetcode.com/problems/find-missing-and-repeated-values/?envType=problem-list-v2&envId=a19800zg)
