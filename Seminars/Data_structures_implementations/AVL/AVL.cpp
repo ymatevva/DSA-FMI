@@ -46,13 +46,9 @@ class AVL {
         Node* newNode = curr->left;
         curr->left = newNode->right;
         newNode->right = curr;
-
-     
-        int balanceLeft = getBF(curr->left);
-        int balanceRight = getBF(newNode->right);
-
-        setBF(curr, balanceLeft);
-        setBF(newNode, balanceRight);
+        
+        setBF(curr, getBF(curr));
+        setBF(newNode, getBF(newNode));
 
         return newNode;
     }
@@ -63,13 +59,8 @@ class AVL {
         curr->right = newNode->left;
         newNode->left = curr;
 
-
-        int balanceLeft = getBF(curr->left);
-        int balanceRight = getBF(newNode->right);
-
-        setBF(curr, balanceLeft);
-        setBF(newNode, balanceRight);
-
+        setBF(curr, getBF(curr));
+        setBF(newNode, getBF(newNode));
         return newNode;
     }
 
