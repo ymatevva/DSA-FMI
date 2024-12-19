@@ -3,6 +3,8 @@
 #include<cstdint> 
 using namespace std;
 
+
+//only the rotations and the balance factor setting/getting are to be learned
 template <typename T>
 class AVL {
     class Node {
