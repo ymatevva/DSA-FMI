@@ -9,7 +9,7 @@ class Graph {
 	bool oriented;
 
 	void DFS_HELP(size_t start, std::vector<bool>& visited) const;
-	
+	void hasCycleRec(int start, std::vector<bool>& mySt, std::vector<bool>& visited> const;
 public:
 	Graph(size_t vertexCount, bool isOriented);
 
@@ -18,7 +18,7 @@ public:
 	void BFS(size_t start) const;
 	void DFS_ITERATIVE(size_t start) const;
 	void DFS_RECURSIVE(size_t start) const;
-
+        bool hasCycle()const;
 };
 
 void Graph::DFS_HELP(size_t start, std::vector<bool>& visited) const
@@ -103,3 +103,34 @@ void Graph::DFS_ITERATIVE(size_t start) const
 	}
 }
 
+void Graph::hasCycleHelp(int start, std::vector<bool>& mySt, std::vector<bool>& visited){
+
+   if(!visited[start]){
+
+     mySt[start] = true;
+     visited[start] = true;
+
+    for(auto iter : adj[start]){
+
+      if(!visited[iter] && hasCycleHelp(iter,mySt,visited){
+          return true;
+      }else if(mySt[iter]){
+         return true;
+      }
+    }
+   }
+    mySt[start] = false;
+    return false;
+ }
+
+
+void Graph::hasCycle()const{
+	std::vector<bool>mySt;
+        std::vector<bool>visited;
+
+for(int i = 0; i < adj.size();i++){
+   if(hasCycleHelp(i,mySt,visited)){
+         return true;
+   }
+}return false;
+}
