@@ -9,7 +9,7 @@ class Graph {
 	bool oriented;
 
 	void DFS_HELP(size_t start, std::vector<bool>& visited) const;
-	void hasCycleRec(int start, std::vector<bool>& mySt, std::vector<bool>& visited> const;
+	void hasCycleHelp(int start, std::vector<bool>& mySt, std::vector<bool>& visited> const;
 public:
 	Graph(size_t vertexCount, bool isOriented);
 
