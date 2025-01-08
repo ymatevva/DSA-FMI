@@ -10,17 +10,36 @@ class Graph {
 
 	void DFS_HELP(size_t start, std::vector<bool>& visited) const;
 	void hasCycleHelp(int start, std::vector<bool>& mySt, std::vector<bool>& visited> const;
+        bool hasPathHelp(int start, int end,vector<bool>& visited) const;
 public:
 	Graph(size_t vertexCount, bool isOriented);
 
 	void addEdge(size_t start, size_t end);
-
+        bool hasPath(int start, int end) const;
 	void BFS(size_t start) const;
 	void DFS_ITERATIVE(size_t start) const;
 	void DFS_RECURSIVE(size_t start) const;
         bool hasCycle()const;
 };
 
+void Graph :: hasPathHelp(int start, int end, vector<bool>&visited) const{
+  if(start == end){
+  return true;
+
+  visited[start] = true;
+  for(auto it : adj[start]){
+      if(!visited[i] && hasPathHelp(it,end,visited)){
+            return true;
+      }
+  }
+  return false;
+  }
+ 
+void Graph :: hasPath(int start, int end)const{
+
+  vector<bool>visited(adj.size(),false);
+  return hasPathHelp(start,end,visited);
+}
 void Graph::DFS_HELP(size_t start, std::vector<bool>& visited) const
 {
 	visited[start] = true;
