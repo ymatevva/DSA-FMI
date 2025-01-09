@@ -52,9 +52,10 @@ int Graph::shortestPath(int start, int end)const{
 					if (neighbor == end) {
 						return dist + 1;//we add the last one that is the target 
 					}
-				}
+				
 				myQ.push(neighbor);
 				visited[neighbor] = true;
+				}
 			}
 		}
 		dist++;
