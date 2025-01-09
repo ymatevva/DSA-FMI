@@ -20,7 +20,48 @@ public:
 	void DFS_ITERATIVE(size_t start) const;
 	void DFS_RECURSIVE(size_t start) const;
         bool hasCycle()const;
+        int shortestPath(int start, int end) const;
 };
+
+
+int Graph::shortestPath(int start, int end)const{
+
+	if (start == end) {
+		return 0;
+	}
+
+	vector<bool>visited(graph.size(), false);
+	queue<int>myQ;
+
+	myQ.push(start);
+	visited[start] = true;
+	size_t dist = 0;
+
+	while (!myQ.empty()) {
+
+		size_t currLSize = myQ.size();
+
+		for (size_t i = 0; i < currLSize; i++)
+		{
+			int topEl = myQ.front();
+			myQ.pop();
+
+			for (auto neighbor : graph[topEl]) {
+
+				if (!visited[neighbor]) {
+					if (neighbor == end) {
+						return dist + 1;//we add the last one that is the target 
+					}
+				}
+				myQ.push(neighbor);
+				visited[neighbor] = true;
+			}
+		}
+		dist++;
+	}
+	return -1;
+
+}
 
 void Graph :: hasPathHelp(int start, int end, vector<bool>&visited) const{
   if(start == end){
