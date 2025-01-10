@@ -4,7 +4,7 @@
 using namespace std;
 
 
-vector<int> djikstraAlg(const vector<vector<pair<int, int>>>& weightedGraph, int start) {
+vector<int> dijkstraAlg(const vector<vector<pair<int, int>>>& weightedGraph, int start) {
 	vector<int>distances(weightedGraph.size(), INT_MAX);
 	priority_queue<pair<int, int>, vector<pair<int, int>>, greater<pair<int, int>>> myPQ;
 
