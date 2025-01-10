@@ -39,8 +39,8 @@ void heapSort(vector<int>& data) {
 
 	for (size_t i = 0; i < data.size()-1; i++)//n times we call heapify which is log n in wc so 0(n*logn)
 	{
-		swap(data[0], data[minEl--]);
-		heapify(0, data, minEl);
+		swap(data[0], data[minEl]);
+		heapify(0, data, minEl--);
 	}
 }
 
