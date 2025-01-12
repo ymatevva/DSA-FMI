@@ -7,6 +7,8 @@
 
 using namespace std;
 
+//!!!the implementation hasnt been tested and contains logic issues
+
 constexpr double MAX_LOAD_FACTOR = 0.75;
 
 template<typename Key, typename Hash = std::hash<Key>>
