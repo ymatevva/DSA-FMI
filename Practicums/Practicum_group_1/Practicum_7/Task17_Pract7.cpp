@@ -18,42 +18,42 @@ struct TreeNode {
 
 
 vector<vector<int>> zigzagLevelOrder(TreeNode* root) {
-	vector<vector<int>> res;
-	if (!root) {
-		return res;
-	}
+	        vector<vector<int>> res;
+        if (!root) {
+            return res;
+        }
+        
+        queue<TreeNode*> myQ;
+        myQ.push(root);
+        size_t level = 1;
 
-	queue<TreeNode*> nodes;
-	nodes.push(root);
-	int level = 1;
-	while (!nodes.empty()) {
-		
-		vector<int> currLevel;
-		size_t currLSize = nodes.size();
+        while (!myQ.empty()) {
+            size_t currLSize = myQ.size();
+            vector<int> cLevel;
 
-		for (size_t i = 0; i < currLSize; i++) {
-			
-			TreeNode* topEl = nodes.front();
-			nodes.pop();
+            for (size_t i = 0; i < currLSize; i++) {
+                TreeNode* topEl = myQ.front();
+                myQ.pop();
 
-			if (level % 2 == 1) {
-				currLevel.push_back(topEl->val);
-			}
-			else {
-				currLevel.insert(currLevel.begin(), topEl->val);
-			}
+                cLevel.push_back(topEl->val);
+                
+                if (topEl->left) {
+                    myQ.push(topEl->left);
+                }
 
-			if (topEl->left) {
-				nodes.push(topEl->left);
-			}
-			if (topEl->right) {
-				nodes.push(topEl->right);
-			}
-		}
+                if (topEl->right) {
+                    myQ.push(topEl->right);
+                }
+            }
 
-		res.push_back(currLevel);
-		level++; 
-	}
+        
+            if (level % 2 == 0) {
+                reverse(cLevel.begin(), cLevel.end());
+            }
+
+            res.push_back(cLevel);
+            level++;
+        }
 
 	return res;
 }
