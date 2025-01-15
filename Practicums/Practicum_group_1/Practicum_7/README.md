@@ -15,3 +15,4 @@
 13. [Convert Sorted Array to Binary Search Tree](https://leetcode.com/problems/convert-sorted-array-to-binary-search-tree/description/)
 14. [Two Sum IV - Input is a BST](https://leetcode.com/problems/two-sum-iv-input-is-a-bst/description/)
 15. [Deepest Leaves Sum](https://leetcode.com/problems/deepest-leaves-sum/description/)
+16. [Increasing Order Search Tree](https://leetcode.com/problems/increasing-order-search-tree/?envType=problem-list-v2&envId=aw7610t5)
