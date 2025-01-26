@@ -14,18 +14,19 @@ struct ListNode {
 };
 
 ListNode* swapNodes(ListNode* head) {
-	if (!head|| !head->next) {
-		return head;
-	}
+	     
+      if(!head || !head->next){
+        return head;
+      }
 
-	ListNode* curr = head;
-	while (curr&& curr->next) {
-		int currVal = curr->val;
-		curr->val = curr->next->val;
-		curr->next->val = currVal;
-		curr = curr->next->next;
-	}
-	return head;
+      ListNode* curr = head;
+      ListNode* afterCurr = curr->next;
+ 
+      curr->next=afterCurr->next;
+      afterCurr->next = curr;
+      curr->next = swapPairs(curr->next);
+
+      return afterCurr;
 }
 
 int main() {
