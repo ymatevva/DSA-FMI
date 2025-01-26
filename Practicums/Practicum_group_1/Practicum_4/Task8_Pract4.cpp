@@ -9,18 +9,19 @@ struct Node {
 };
 
 Node* swapNodesInPairs(Node* head) {
-	if (!head|| !head->next) {
-		return nullptr;
-	}
+     
+      if(!head || !head->next){
+        return head;
+      }
 
-	Node* iter = head;
-	while (iter) {
-		int curr = iter->val;
-		iter->val = iter->next->val;
-		iter->next->val = curr;
-		iter = iter->next->next;
-	}
-	return head;
+      ListNode* curr = head;
+      ListNode* afterCurr = curr->next;
+ 
+      curr->next=afterCurr->next;
+      afterCurr->next = curr;
+      curr->next = swapPairs(curr->next);
+
+      return afterCurr;
 }
 int main() {
 	Node* test = new Node(1);
