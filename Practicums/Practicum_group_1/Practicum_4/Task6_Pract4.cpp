@@ -17,8 +17,10 @@ void removeDuplicates(Node* head) {
 	while (iter && iter->next) {
 		if (iter->val == iter->next->val) {
 			iter->next = iter->next->next;
-		}
+		}else{
 		iter = iter->next;
+		}
+			
 	}
 }
 
