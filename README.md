@@ -11,18 +11,17 @@ This repository contains materials, homeworks, practicum exercises, and seminar 
 
 ## 🛠 Practicums
 
-- [Week_01]   [solutions](./Practicum/Practicum_01)  |  [practicum](https://github.com/KristinaKalemdzhieva/Data_structures_and_algorithms_pract_FMI/tree/main/Pract%2001)
-- [Week_02]   [solutions](./Practicum/Practicum_02)  |  [practicum](https://github.com/KristinaKalemdzhieva/Data_structures_and_algorithms_pract_FMI/tree/main/Pract%2002)
-- [Week_03]   [solutions](./Practicum/Practicum_03)  |  [practicum](https://github.com/KristinaKalemdzhieva/Data_structures_and_algorithms_pract_FMI/tree/main/Pract%2004)
-- [Week_04]   [solutions](./Practicum/Practicum_04)  |  [practicum](https://github.com/KristinaKalemdzhieva/Data_structures_and_algorithms_pract_FMI/tree/main/Pract%2005)
-- [Week_05]   [solutions](./Practicum/Practicum_05)  |  [practicum](https://github.com/KristinaKalemdzhieva/Data_structures_and_algorithms_pract_FMI/tree/main/Pract%2006)
-- [Week_06]   [solutions](./Practicum/Practicum_06)  |  [practicum](https://github.com/KristinaKalemdzhieva/Data_structures_and_algorithms_pract_FMI/tree/main/Pract%2007)
-- [Week_07]   [solutions](./Practicum/Practicum_07)  |  [practicum](https://github.com/KristinaKalemdzhieva/Data_structures_and_algorithms_pract_FMI/tree/main/Pract%2008)
-- [Week_08]   [solutions](./Practicum/Practicum_08)  |  [practicum](https://github.com/KristinaKalemdzhieva/Data_structures_and_algorithms_pract_FMI/tree/main/Pract%2009)
-- [Week_09]   [solutions](./Practicum/Practicum_09)  |  [practicum](https://github.com/KristinaKalemdzhieva/Data_structures_and_algorithms_pract_FMI/tree/main/Pract%2010)
-- [Week_10]   [solutions](./Practicum/Practicum_10)  |  [practicum](https://github.com/KristinaKalemdzhieva/Data_structures_and_algorithms_pract_FMI/tree/main/Pract%2011)
----
+- [Week_01](./Practicum/Practicum_01) 
+- [Week_03](./Practicum/Practicum_03) 
+- [Week_04](./Practicum/Practicum_04) 
+- [Week_05](./Practicum/Practicum_05)
+- [Week_06](./Practicum/Practicum_06) 
+- [Week_07](./Practicum/Practicum_07) 
+- [Week_08](./Practicum/Practicum_08) 
+- [Week_09](./Practicum/Practicum_09)  
+- [Week_10](./Practicum/Practicum_10)
 
+---
 ## 🎓 Seminars
 Examples from seminars can be found here:  
 
