@@ -1,4 +1,4 @@
-# HW1 - Browser Tabs Management 
+# HW1 - Browser Tabs Management System
 
 This project implements a tab management system for a browser. Each tab stores a URL and a timestamp representing the time when the page was loaded. The program allows managing multiple tabs, navigating between them, opening and closing tabs, and visiting web pages via a command-line interface.
 
